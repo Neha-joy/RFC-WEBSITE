@@ -81,7 +81,7 @@ function Contact() {
                   <p className="text-sm uppercase tracking-widest text-sky-300">
                     Phone
                   </p>
-                  <h4 className="text-xl font-semibold">+971 56 258 8295</h4>
+                  <h4 className="text-xl font-semibold">+971 56 960 8768</h4>
                 </div>
 
                 <div>

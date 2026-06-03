@@ -7,7 +7,7 @@ function Footer() {
           Professional Manpower Supply Solutions
         </p>
         <p className="mt-3 text-sky-100">
-          Email: info@rfcgroup.com | Phone: +971 50 000 0000
+          Email: info@rfcgroup.com | Phone: +971 56 960 8768
         </p>
         <p className="mt-4 text-sm text-sky-200">
           © {new Date().getFullYear()} RFC Group of Company. All Rights Reserved.
