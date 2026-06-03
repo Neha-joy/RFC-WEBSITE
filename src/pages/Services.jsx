@@ -48,65 +48,91 @@ function Services() {
   ];
 
   return (
-    <section id="services" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section
+      id="services"
+      className="relative overflow-hidden bg-gradient-to-b from-white via-sky-50 to-red-50 py-24"
+    >
+      <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-red-200/40 blur-3xl"></div>
+      <div className="absolute -right-20 bottom-20 h-72 w-72 rounded-full bg-sky-200/40 blur-3xl"></div>
 
+      <div className="relative mx-auto max-w-7xl px-6">
         <div className="text-center">
-          <span className="uppercase tracking-widest text-sky-600 font-semibold">
+          <span className="rounded-full bg-white px-5 py-2 text-sm font-bold uppercase tracking-widest text-sky-600 shadow">
             Our Services
           </span>
 
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900">
+          <h2 className="mt-5 text-4xl font-extrabold text-gray-900 md:text-5xl">
             Complete Manpower Solutions
           </h2>
 
-          <p className="mt-5 max-w-3xl mx-auto text-lg text-gray-600">
+          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-gray-600">
             RFC Group provides professional manpower solutions for construction,
             industrial, commercial, and facility management projects across UAE.
           </p>
         </div>
 
-        <div className="grid gap-8 mt-16 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="group rounded-3xl border border-sky-100 bg-white p-8 shadow-lg transition duration-300 hover:-translate-y-2 hover:bg-sky-600"
-            >
-              <div className="text-sky-600 group-hover:text-white">
-                {service.icon}
+        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => {
+            const isBlue = index % 2 === 0;
+
+            return (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-3xl bg-white p-8 shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl"
+              >
+                <div
+                  className={`absolute left-0 top-0 h-2 w-full ${
+                    isBlue
+                      ? "bg-gradient-to-r from-sky-600 to-sky-400"
+                      : "bg-gradient-to-r from-red-600 to-red-400"
+                  }`}
+                ></div>
+
+                <div
+                  className={`mb-6 flex h-16 w-16 items-center justify-center rounded-2xl text-white shadow-lg ${
+                    isBlue
+                      ? "bg-gradient-to-r from-sky-600 to-sky-400"
+                      : "bg-gradient-to-r from-red-600 to-red-400"
+                  }`}
+                >
+                  {service.icon}
+                </div>
+
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {service.title}
+                </h3>
+
+                <p className="mt-4 leading-7 text-gray-600">
+                  {service.description}
+                </p>
+
+                <div
+                  className={`mt-6 h-1 w-0 rounded-full transition-all duration-500 group-hover:w-full ${
+                    isBlue ? "bg-sky-600" : "bg-red-600"
+                  }`}
+                ></div>
               </div>
-
-              <h3 className="mt-6 text-2xl font-bold text-gray-900 group-hover:text-white">
-                {service.title}
-              </h3>
-
-              <p className="mt-4 leading-7 text-gray-600 group-hover:text-sky-100">
-                {service.description}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        <div className="mt-20 rounded-3xl bg-gradient-to-r from-sky-700 to-sky-500 p-12 text-center text-white">
-
-          <h3 className="text-4xl font-bold">
-            Need Workforce for Your Project?
+        <div className="mt-20 overflow-hidden rounded-3xl bg-sky-700  p-12 text-center text-white shadow-2xl">
+          <h3 className="text-4xl font-extrabold">
+            Need Workforce For Your Project?
           </h3>
 
-          <p className="mt-4 text-lg text-sky-100">
-            We provide skilled, semi-skilled, and general manpower
-            with fast mobilization and reliable support.
+          <p className="mx-auto mt-5 max-w-2xl text-lg text-sky-100">
+            We provide skilled, semi-skilled and general manpower with fast
+            mobilization and professional workforce management.
           </p>
 
           <a
             href="#contact"
-            className="inline-block mt-8 rounded-xl bg-white px-8 py-4 font-semibold text-sky-700 transition hover:bg-sky-100"
+            className="mt-8 inline-block rounded-xl bg-white px-8 py-4 font-bold text-sky-700 transition hover:scale-105 hover:bg-slate-100"
           >
             Request Manpower
           </a>
-
         </div>
-
       </div>
     </section>
   );

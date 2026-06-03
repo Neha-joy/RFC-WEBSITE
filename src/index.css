@@ -20,3 +20,22 @@ html {
 .whatsapp-float {
   animation: pulse-whatsapp 2s infinite;
 }
+
+@keyframes scrollGallery {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.gallery-scroll {
+  width: max-content;
+  animation: scrollGallery 25s linear infinite;
+}
+
+.gallery-scroll:hover {
+  animation-play-state: paused;
+}
